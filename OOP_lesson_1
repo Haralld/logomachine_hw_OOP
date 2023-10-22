@@ -17,7 +17,7 @@ class Library:
         self.books.append(book)
         return self
 
-    def remove_book(self):
+    def remove_book(self, book):
         self.books.remove(book)
         return self
 
