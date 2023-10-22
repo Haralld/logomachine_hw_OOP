@@ -15,9 +15,11 @@ class Library:
     def add_book(self, book_title, book_autor):
         book = Book(book_title, book_autor)
         self.books.append(book)
+        return self
 
     def remove_book(self):
         self.books.remove(book)
+        return self
 
     def __contains__(self, item):
         return item in self.books
@@ -27,14 +29,12 @@ class Library:
 
 
 library = Library()
-library.add_book("Книга 1", "Автор 1")
-library.add_book("Книга 2", "Автор 2")
-library.add_book("Книга 3", "Автор 1")
-
+library.add_book("Книга 1", "Автор 1").add_book("Книга 2", "Автор 2").add_book("Книга 3", "Автор 1")
 
 print("Книга 1 в библиотеке:", "Книга 1" in library)
 print("Книга 2 в библиотеке:", "Книга 2" in library)
+print("Книга 3 в библиотеке:", "Книга 3" in library)
 
+first_book = library[0]
 
-book = library[0]
-print(f"Первая книга: {book.book_title}, {book.book_author}")
+print(f"Первая книга: {first_book.book_title}, {first_book.book_author}")
