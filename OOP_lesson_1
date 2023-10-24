@@ -6,7 +6,8 @@ class Book:
     ):
         self.book_title = book_title
         self.book_author = book_author
-
+    def __str__(self):
+        return f"Название: {self.book_title}, Автор: {self.book_author}"
 
 class Library:
     def __init__(self):
@@ -28,9 +29,8 @@ class Library:
         return any(book.book_title == title for book in self.books)
 
     def __getitem__(self, index):
-        if 0 <= index < len(self.books):
-            return self.books[index]
-        return None
+        return self.books[index]
+
 
 print("Добавляем книги в библиотеку")
 
@@ -61,7 +61,7 @@ print(f"Первая книга: {book.book_title}, {book.book_author}")
 
 print("Ищем книги по разрезу")
 
-books = library[1:]
+books = library[2:]
 
 for book in books:
     print(f"Книги с третьей и до конца библиотеки: {book.book_title}, {book.book_author}")
