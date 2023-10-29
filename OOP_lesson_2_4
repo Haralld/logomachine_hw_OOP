@@ -6,6 +6,7 @@ class VehicleType(Enum):
     BOAT = "boat"
     BIKE = "bike"
 
+
 class Moveable:
     def move(self) -> None:
         pass
@@ -51,9 +52,11 @@ class Boat(Vehicle, Moveable):
     def move(self) -> None:
         print(f"Скорость лодки {self.speed} морских миль")
 
+
 class Bike(Vehicle, Moveable):
     def move(self) -> None:
         print(f"Скорость велосипеда {self.speed} км/час")
+
 
 def move_any_vehicle(vehicle: Moveable) -> None:
     vehicle.move()
