@@ -8,30 +8,30 @@ class Greenhouse:
         self.__temperature = temperature
         self.__humidity = humidity
         self.__light_level = light_level
-        
-    def get_temperature(self):
+
+    def get_temperature(self): # геттер
         return self.__temperature
 
-    def set_temperature(self, temperature):  # температура в градусах Цельсия
-        if 15 <= temperature <= 30:
+    def set_temperature(self, temperature):  # сеттер
+        if 15 <= temperature <= 30:         # температура в градусах Цельсия
             self.__temperature = temperature
         else:
             print("Недопустимая температура")
 
-    def get_humidity(self):
+    def get_humidity(self):     # геттер
         return self.__humidity
-    
-    def set_humidity(self, humidity):  # влажность в процентах
-        if 50 <= humidity <= 60:
+
+    def set_humidity(self, humidity):  # сеттер
+        if 50 <= humidity <= 60:        # влажность в процентах
             self.__humidity = humidity
         else:
             print("Недопустимый уровень влажности")
 
-    def get_light_level(self):
+    def get_light_level(self):   # геттер
         return self.__light_level
 
-    def set_light_level(self, light_level):  # интенсивность свечения в Вт/м2
-        if 25 <= light_level <= 65:
+    def set_light_level(self, light_level):  # сеттер
+        if 25 <= light_level <= 65:         # интенсивность свечения в Вт/м2
             self.__light_level = light_level
         else:
             print("Недопустимый уровень освещенности")
@@ -41,7 +41,7 @@ my_greenhouse = Greenhouse(temperature=28, humidity=65, light_level=80)
 
 my_greenhouse.set_temperature(28)
 my_greenhouse.set_humidity(60)
-my_greenhouse.set_light_level(80)
+my_greenhouse.set_light_level(55)
 
 print("Текущая температура:", my_greenhouse.get_temperature())
 print("Текущий уровень влажности:", my_greenhouse.get_humidity())
