@@ -3,7 +3,7 @@ class Greenhouse:
             self,
             temperature=25,
             humidity=50,
-            light_level=75
+            light_level=65
     ):
         self.__temperature = temperature
         self.__humidity = humidity
@@ -36,16 +36,20 @@ class Greenhouse:
         else:
             print("Недопустимый уровень освещенности")
 
+    temperature = property(get_temperature, set_temperature)
+    humidity = property(get_humidity, set_humidity)
+    light_level = property(get_light_level, set_light_level)
 
-my_greenhouse = Greenhouse(temperature=28, humidity=65, light_level=80)
 
-my_greenhouse.set_temperature(28)
-my_greenhouse.set_humidity(60)
-my_greenhouse.set_light_level(55)
+my_greenhouse = Greenhouse(temperature=28, humidity=50, light_level=65)
 
-print("Текущая температура:", my_greenhouse.get_temperature())
-print("Текущий уровень влажности:", my_greenhouse.get_humidity())
-print("Текущий уровень освещенности:", my_greenhouse.get_light_level())
+my_greenhouse.temperature = 28
+my_greenhouse.humidity = 60
+my_greenhouse.light_level = 55
+
+print("Текущая температура:", my_greenhouse.temperature)
+print("Текущий уровень влажности:", my_greenhouse.humidity)
+print("Текущий уровень освещенности:", my_greenhouse.light_level)
 
 
 """
