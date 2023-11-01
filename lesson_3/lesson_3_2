@@ -8,6 +8,9 @@ class Greenhouse:
         self.__temperature = temperature
         self.__humidity = humidity
         self.__light_level = light_level
+        
+    def get_temperature(self):
+        return self.__temperature
 
     def set_temperature(self, temperature):  # температура в градусах Цельсия
         if 15 <= temperature <= 30:
@@ -15,17 +18,17 @@ class Greenhouse:
         else:
             print("Недопустимая температура")
 
-    def get_temperature(self):
-        return self.__temperature
-
+    def get_humidity(self):
+        return self.__humidity
+    
     def set_humidity(self, humidity):  # влажность в процентах
         if 50 <= humidity <= 60:
             self.__humidity = humidity
         else:
             print("Недопустимый уровень влажности")
 
-    def get_humidity(self):
-        return self.__humidity
+    def get_light_level(self):
+        return self.__light_level
 
     def set_light_level(self, light_level):  # интенсивность свечения в Вт/м2
         if 25 <= light_level <= 65:
@@ -33,19 +36,17 @@ class Greenhouse:
         else:
             print("Недопустимый уровень освещенности")
 
-    def get_light_level(self):
-        return self.__light_level
-
 
 my_greenhouse = Greenhouse(temperature=28, humidity=65, light_level=80)
 
 my_greenhouse.set_temperature(28)
 my_greenhouse.set_humidity(60)
-my_greenhouse.set_light_level(55)
+my_greenhouse.set_light_level(80)
 
 print("Текущая температура:", my_greenhouse.get_temperature())
 print("Текущий уровень влажности:", my_greenhouse.get_humidity())
 print("Текущий уровень освещенности:", my_greenhouse.get_light_level())
+
 
 """
 Задание 2: Автоматизация управления теплицей (Инкапсуляция)
@@ -58,4 +59,3 @@ print("Текущий уровень освещенности:", my_greenhouse.g
 
 
 """
-
