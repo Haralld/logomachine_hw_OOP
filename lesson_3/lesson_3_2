@@ -9,47 +9,48 @@ class Greenhouse:
         self.__humidity = humidity
         self.__light_level = light_level
 
-    def get_temperature(self): # геттер
+    @property
+    def temperature(self):  # геттер
         return self.__temperature
 
-    def set_temperature(self, temperature):  # сеттер
-        if 15 <= temperature <= 30:         # температура в градусах Цельсия
-            self.__temperature = temperature
+    @temperature.setter
+    def temperature(self, temperature):  # сеттер
+        if not 15 <= temperature <= 30:  # температура в градусах Цельсия
+            print(f"Недопустимая температура: {temperature}")
         else:
-            print("Недопустимая температура")
+            self.__temperature = temperature
+            print("Текущая температура:", greenhouse.temperature)
 
-    def get_humidity(self):     # геттер
+    @property
+    def humidity(self):  # геттер
         return self.__humidity
 
-    def set_humidity(self, humidity):  # сеттер
-        if 50 <= humidity <= 60:        # влажность в процентах
-            self.__humidity = humidity
+    @humidity.setter
+    def humidity(self, humidity):  # сеттер
+        if not 50 <= humidity <= 60:  # влажность в процентах
+            print(f"Недопустимый уровень влажности: {humidity}")
         else:
-            print("Недопустимый уровень влажности")
+            self.__humidity = humidity
+            print("Текущий уровень влажности:", greenhouse.humidity)
 
-    def get_light_level(self):   # геттер
+    @property
+    def light_level(self):  # геттер
         return self.__light_level
 
-    def set_light_level(self, light_level):  # сеттер
-        if 25 <= light_level <= 65:         # интенсивность свечения в Вт/м2
-            self.__light_level = light_level
+    @light_level.setter
+    def light_level(self, light_level):  # сеттер
+        if not 25 <= light_level <= 65:  # интенсивность свечения в Вт/м2
+            print(f"Недопустимый уровень освещенности: {light_level}")
         else:
-            print("Недопустимый уровень освещенности")
-
-    temperature = property(get_temperature, set_temperature)
-    humidity = property(get_humidity, set_humidity)
-    light_level = property(get_light_level, set_light_level)
+            self.__light_level = light_level
+            print("Текущий уровень освещенности:", greenhouse.light_level)
 
 
-my_greenhouse = Greenhouse(temperature=28, humidity=50, light_level=65)
+greenhouse = Greenhouse()
 
-my_greenhouse.temperature = 28
-my_greenhouse.humidity = 60
-my_greenhouse.light_level = 55
-
-print("Текущая температура:", my_greenhouse.temperature)
-print("Текущий уровень влажности:", my_greenhouse.humidity)
-print("Текущий уровень освещенности:", my_greenhouse.light_level)
+greenhouse.temperature = 28
+greenhouse.humidity = 55
+greenhouse.light_level = 80
 
 
 """
