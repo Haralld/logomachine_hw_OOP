@@ -12,8 +12,7 @@ class Instrument(ABC):
 class Guitar(Instrument):
     def play(self):
         pygame.mixer.init()
-        pygame.mixer.music.load(
-            'lesson_4/lesson_4_1/guitar.mp3')
+        pygame.mixer.music.load('guitar.mp3')
         pygame.mixer.music.set_volume(100)
         print("Так звучит гитара")
         pygame.mixer.music.play()
@@ -24,8 +23,7 @@ class Guitar(Instrument):
 class Piano(Instrument):
     def play(self):
         pygame.mixer.init()
-        pygame.mixer.music.load(
-            'lesson_4/lesson_4_1/piano.mp3')
+        pygame.mixer.music.load('piano.mp3')
         pygame.mixer.music.set_volume(100)
         print("Так звучит пианино")
         pygame.mixer.music.play()
@@ -36,8 +34,7 @@ class Piano(Instrument):
 class Flute(Instrument):
     def play(self):
         pygame.mixer.init()
-        pygame.mixer.music.load(
-            'lesson_4/lesson_4_1/flute.mp3')
+        pygame.mixer.music.load(flute.mp3')
         pygame.mixer.music.set_volume(100)
         print("Так звучит флейта")
         pygame.mixer.music.play()
