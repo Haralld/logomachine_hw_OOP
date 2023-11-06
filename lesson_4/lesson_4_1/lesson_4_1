@@ -25,7 +25,7 @@ class Piano(Instrument):
     def play(self):
         pygame.mixer.init()
         pygame.mixer.music.load(
-            '/home/haralld/Документы/Python/logomashine/Modul_3/Lesson_4/lesson_4_1/sound/piano.mp3')
+            'lesson_4/lesson_4_1/piano.mp3')
         pygame.mixer.music.set_volume(100)
         print("Так звучит пианино")
         pygame.mixer.music.play()
