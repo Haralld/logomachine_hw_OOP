@@ -13,7 +13,7 @@ class Guitar(Instrument):
     def play(self):
         pygame.mixer.init()
         pygame.mixer.music.load(
-            '/home/haralld/Документы/Python/logomashine/Modul_3/Lesson_4/lesson_4_1/sound/guitar.mp3')
+            'lesson_4/lesson_4_1/guitar.mp3')
         pygame.mixer.music.set_volume(100)
         print("Так звучит гитара")
         pygame.mixer.music.play()
